@@ -1,0 +1,80 @@
+doctype html
+html
+  head
+    meta(content='text/html; charset=utf-8',http-equiv='content-type')
+    meta(name='viewport',content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=yes')
+
+    title
+      | Scribe
+    meta(name='description',content='')
+    meta(name='keywords',content='')
+
+    link(rel='shortcut icon', href='/favicon.ico')
+    link(rel='stylesheet', href='/css/style.css')
+
+    <!--[if lt IE 9]>
+    script(src='/js/html5.js')
+    <![endif]-->      
+
+    script(src='/js/webfont.js')
+
+    script.
+
+      window.GOOGLE_API_KEY = '!{config.google_api_key}';
+
+      WebFont.load({
+        google: {
+          families: ['Open+Sans']
+        }
+      });
+
+  body
+
+    header(class="super-container full-width")
+      div(class="container")
+        div(class="one-half column")
+          h2 
+            | Scribe
+        div(class="one-half column")
+
+    main(class="super-container full-width")
+      block content
+
+    footer(class="super-container full-width")
+      div(class="container")
+        div(class="one column")
+        div(class="ten columns middle")
+          | This app is made possible by the open and free Web:
+          div
+            a(href='https://rg3.github.io/youtube-dl' target='_blank')
+              | Youtube-dl
+            | &nbsp;&middot;&nbsp;          
+            a(href='https://cloud.google.com/speech' target='_blank')
+              | Google Cloud Speech API
+            | &nbsp;&middot;&nbsp;
+            a(href='https://ffmpeg.org' target='_blank')
+              | FFmpeg
+            | &nbsp;&middot;&nbsp;
+            a(href='http://sox.sourceforge.net' target='_blank')
+              | SoX
+            | &nbsp;&middot;&nbsp;
+            a(href='https://nodejs.org' target='_blank')
+              | Node.js
+            | &nbsp;&middot;&nbsp;
+            a(href='https://www.mongodb.com/community' target='_blank')
+              | MongoDB
+            | &nbsp;&middot;&nbsp;
+            and many others
+
+
+              
+        div(class="one column")
+
+    span(class="resp-flag")
+
+    script(src='/js/jquery-3.1.1.min.js')
+    script(src='/js/jquery.timer.min.js')
+    script(src='/js/main.js')      
+
+    if( __environment == 'production' && tracking_scripts )
+      != tracking_scripts

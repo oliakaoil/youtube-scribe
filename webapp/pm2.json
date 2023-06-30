@@ -1,0 +1,5 @@
+{
+  "interpreter": "node",
+  "script": "./server.js",
+  "name": "scribe"
+}

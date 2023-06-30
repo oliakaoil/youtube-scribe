@@ -1,0 +1,32 @@
+
+extends layout.pug
+
+block content
+  div(class='container form-container')
+    h6
+      | Enter the full URL or ID of a short Youtube video below. The audio from the video will be converted to text using
+      | the Google Cloud Speech API. A five minute video usually takes about 40 seconds to convert.
+    input(type='text',id='youtube-id')
+    input(type='button',value='Generate text',id='generate-button')
+    div(id='error-message')
+
+  div(class='container')
+    div(class='four columns first-child')
+      div(id='iframe-container')
+        | &nbsp;
+      div(id='iframe-url')
+        | &nbsp;
+      div(id='done-list')
+        div(class='header')
+          | Recent conversions
+        div(class='list')
+    div(class='eight columns last-child')
+      div(id='youtube-text')    
+        div(id='job-watch-container')
+          div(id='job-timer')
+          img(src='/images/ajax-loader.gif',class='ajax-loader hidden')
+        div(id='convert-status-message')
+          | Text transcribed from the video audio will appear below
+        div(class='text')
+
+        
